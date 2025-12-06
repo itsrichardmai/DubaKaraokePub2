@@ -3,22 +3,25 @@ import { Menu, X, Phone, Mail, MapPin, Clock, Star, ChevronLeft, ChevronRight, P
 
 // Main App Component
 const DubaApp = () => {
+  // Base URL for assets (handles both local and GitHub Pages)
+  const baseUrl = import.meta.env.BASE_URL;
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isHeroVisible, setIsHeroVisible] = useState(false);
   const [expandedDrinkSection, setExpandedDrinkSection] = useState(null);
   const [galleryItems, setGalleryItems] = useState([
-    { type: 'image', url: '/gallery/galleryimg0.png', title: 'Karaoke Room' },
-    { type: 'image', url: '/gallery/galleryimg1.jpg', title: 'Karaoke Room' },
-    { type: 'image', url: '/gallery/galleryimg2.jpg', title: 'BBQ Chicken' },
-    { type: 'image', url: '/gallery/galleryimg3.png', title: 'Karaoke Room' },
-    { type: 'image', url: '/gallery/galleryimg4.png', title: 'Karaoke Room' },
-    { type: 'image', url: '/gallery/galleryimg5.png', title: 'Karaoke Room' },
-    { type: 'image', url: '/gallery/galleryimg6.png', title: 'Karaoke Room' },
-    { type: 'image', url: '/gallery/galleryimg7.png', title: 'Karaoke Room' },
-    { type: 'image', url: '/gallery/galleryimg8.png', title: 'Karaoke Room' },
-    { type: 'image', url: '/gallery/galleryimg9.png', title: 'Karaoke Room' },
-    { type: 'image', url: '/gallery/galleryimg3.png', title: 'Karaoke Room' },
+    { type: 'image', url: `${baseUrl}gallery/galleryimg0.png`, title: 'Karaoke Room' },
+    { type: 'image', url: `${baseUrl}gallery/galleryimg1.jpg`, title: 'Karaoke Room' },
+    { type: 'image', url: `${baseUrl}gallery/galleryimg2.jpg`, title: 'BBQ Chicken' },
+    { type: 'image', url: `${baseUrl}gallery/galleryimg3.png`, title: 'Karaoke Room' },
+    { type: 'image', url: `${baseUrl}gallery/galleryimg4.png`, title: 'Karaoke Room' },
+    { type: 'image', url: `${baseUrl}gallery/galleryimg5.png`, title: 'Karaoke Room' },
+    { type: 'image', url: `${baseUrl}gallery/galleryimg6.png`, title: 'Karaoke Room' },
+    { type: 'image', url: `${baseUrl}gallery/galleryimg7.png`, title: 'Karaoke Room' },
+    { type: 'image', url: `${baseUrl}gallery/galleryimg8.png`, title: 'Karaoke Room' },
+    { type: 'image', url: `${baseUrl}gallery/galleryimg9.png`, title: 'Karaoke Room' },
+    { type: 'image', url: `${baseUrl}gallery/galleryimg3.png`, title: 'Karaoke Room' },
 
   ]);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
@@ -418,7 +421,7 @@ Submitted at: ${new Date().toLocaleString()}
             {/* Logo */}
             <div className="flex items-center space-x-3">
               {/* Your logo icon - replace 'logo-icon.png' with your actual filename */}
-              <img src="/logo-icon.png" alt="Duba Logo" className="h-25 w-25 object-contain" />
+              <img src={`${baseUrl}logo-icon.png`} alt="Duba Logo" className="h-25 w-25 object-contain" />
             </div>
 
             {/* Desktop Navigation */}
@@ -475,7 +478,7 @@ Submitted at: ${new Date().toLocaleString()}
         ></div>
         
         <div className="container mx-auto px-4 text-center z-10 relative">
-          <img src="/logo-icon.png" alt="Duba" className="mx-auto mb-8 h-32" />
+          <img src={`${baseUrl}logo-icon.png`} alt="Duba" className="mx-auto mb-8 h-32" />
           <h1 className={`text-6xl md:text-8xl font-medium mb-4 transition-all duration-1000 transform ${
             isHeroVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-10 scale-95'
           }`}>
@@ -487,7 +490,7 @@ Submitted at: ${new Date().toLocaleString()}
           <div className="mb-8 text-center">
             {/* BB.Q Chicken promotional image */}
             <img 
-              src="/bbq-chicken-promo.png" 
+              src={`${baseUrl}bbq-chicken-promo.png`} 
               alt="Introducing bb.q CHICKEN - No.1 Korean Chicken Famous in 57 Countries Worldwide including USA Flagship in NYC" 
               className="mx-auto max-w-2xl w-full rounded-lg"
             />
@@ -1233,7 +1236,7 @@ Submitted at: ${new Date().toLocaleString()}
                     <div className="flex items-center gap-3">
                       <div className="w-28 h-8 flex items-center justify-start">
                         <img 
-                          src="/doordash-logo.png" 
+                          src={`${baseUrl}doordash-logo.png`} 
                           alt="DoorDash"
                           className="h-7 w-auto object-contain"
                         />
